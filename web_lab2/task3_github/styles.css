@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f8fa;
+    color: #24292f;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20 px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    padding: 12px 24px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 40px;
+    min-height: 500px;
+    width: 280px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card button {
+    margin-top: 30px;
+    padding: 14px 12px;
+    min-height: 30px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.addons {
+    padding: 40px 20px;
+}
+
+.addons h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.addon-card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .pricing {
+        flex-direction: column;  
+        align-items: center;
+    }
+
+    .addons-grid {
+        grid-template-columns: 1fr; 
+    }
+}
