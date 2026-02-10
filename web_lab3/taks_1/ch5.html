@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+let a = 0;
+alert( Boolean(a) ); // false
+let b = "0";
+alert( Boolean(b) ); // true
+alert(a == b); // true!
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+alert( undefined > 0 ); // false (1)
+alert( undefined < 0 ); // false (2)
+alert( undefined == 0 ); // false (3)
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+if (year == 2015) alert( 'You are right!' );
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+if (year == 2015) {
+  alert( 'You guessed it right!' );
+} else {
+  alert( 'How can you be so wrong?' ); // any value except 2015
+}
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+let company = prompt('Which company created JavaScript?', '');
+(company == 'Netscape') ?
+   alert('Right!') : alert('Wrong.');
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+alert( true || true );   // true
+alert( false || true );  // true
+alert( true || false );  // true
+alert( false || false ); // false
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+alert( true && true );   // true
+alert( false && true );  // false
+alert( true && false );  // false
+alert( false && false ); // false
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+let user;
+alert(user ?? "Anonymous"); // Anonymous (user is undefined)
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+let firstName = null;
+let lastName = null;
+let nickName = "Supercoder";
+// shows the first truthy value:
+alert(firstName || lastName || nickName || "Anonymous"); // Supercoder
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+let sum = 0;
+while (true) {
+  let value = +prompt("Enter a number", '');
+  if (!value) break; // (*)
+  sum += value;
+}
+alert( 'Sum: ' + sum );
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    let input = prompt(`Value at coords (${i},${j})`, '');
+    // what if we want to exit from here to Done (below)?
+  }
+}
+alert('Done!');
+</script>

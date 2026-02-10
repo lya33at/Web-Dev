@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+let user = { name: 'John' };
+let admin = user;
+admin.name = 'Pete'; // changed by the "admin" reference
+alert(user.name); // 'Pete', changes are seen from the "user" reference
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+l
+let clone = {}; // the new empty object
+// let's copy all user properties into it
+for (let key in user) {
+  clone[key] = user[key];
+}
+
+// now clone is a fully independent object with the same content
+clone.name = "Pete"; // changed the data in it
+
+alert( user.name ); // still John in the original object
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+// let's create a circular reference:
+// user.me references the user itself
+user.me = user;
+
+let clone = structuredClone(user);
+alert(clone.me === clone); // true
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let user = {
+  name: "John",
+  age: 30
+};
+
+user.sayHi = function() {
+  alert("Hello!");
+};
+
+user.sayHi(); // Hello!
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    // "this" is the "current object"
+    alert(this.name);
+  }
+
+};
+
+user.sayHi(); // John
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    alert( user.name ); // leads to an error
+  }
+
+};
+
+
+let admin = user;
+user = null; // overwrite to make things obvious
+
+admin.sayHi(); // TypeError: Cannot read property 'name' of null
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let user = {
+  firstName: "Ilya",
+  sayHi() {
+    let arrow = () => alert(this.firstName);
+    arrow();
+  }
+};
+
+user.sayHi(); // Ilya
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+function User() {
+  alert(new.target);
+}
+
+// without "new":
+User(); // undefined
+
+// with "new":
+new User(); // function User { ... }
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+function User(name) {
+  this.name = name;
+
+  this.sayHi = function() {
+    alert( "My name is: " + this.name );
+  };
+}
+
+let john = new User("John");
+
+john.sayHi(); // My name is: John
+
+/*
+john = {
+   name: "John",
+   sayHi: function() { ... }
+}
+*/
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let html = document.querySelector('.elem') ? document.querySelector('.elem').innerHTML : null;
+</script>

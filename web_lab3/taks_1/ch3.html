@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<script>
+"use strict";
+let age = prompt('How old are you?', 100);
+alert(`You are ${age} years old!`); // You are 100 years old!
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+let isBoss = confirm("Are you the boss?");
+alert( isBoss ); // true if OK is pressed
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+let value = true;
+alert(typeof value); // boolean
+value = String(value); // now value is a string "true"
+alert(typeof value); // string
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+alert( Number("   123   ") ); // 123
+alert( Number("123z") );      // NaN (error reading a number at "z")
+alert( Number(true) );        // 1
+alert( Number(false) );       // 0
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+alert( Boolean(1) ); // true
+alert( Boolean(0) ); // false
+alert( Boolean("hello") ); // true
+alert( Boolean("") ); // false
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+alert( 5 % 2 ); // 1, the remainder of 5 divided by 2
+alert( 8 % 3 ); // 2, the remainder of 8 divided by 3
+alert( 8 % 4 ); // 0, the remainder of 8 divided by 4
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+// No effect on numbers
+let x = 1;
+alert( +x ); // 1
+let y = -2;
+alert( +y ); // -2
+// Converts non-numbers
+alert( +true ); // 1
+alert( +"" );   // 0
+</script>
+
+
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let counter = 2;
+counter++;        // works the same as counter = counter + 1, but is shorter
+alert( counter ); // 3
+</script>
