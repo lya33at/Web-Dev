@@ -1,0 +1,48 @@
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 200px;
+}
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #16a34a;
+}
+
+.rating {
+  color: #f59e0b;
+}
+
+.actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.like {
+  background-color: #ffe4e6;
+}
+
+.delete {
+  background-color: #fee2e2;
+}
+
+.share {
+  background-color: #e0f2fe;
+}

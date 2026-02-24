@@ -1,0 +1,24 @@
+<div class="product-card">
+  <img [src]="product().imageUrl" [alt]="product().name">
+
+  <h3>{{ product().name }}</h3>
+  <p>{{ product().description }}</p>
+
+  <p class="price">
+    Price: {{ product().price }} ₸
+  </p>
+
+  <p class="rating">
+    Rating: ⭐ {{ product().rating }}
+  </p>
+
+  <p class="likes">
+    ❤️ {{ product().likes }}
+  </p>
+
+  <div class="actions">
+    <button class="like" (click)="like()">Like</button>
+    <button class="delete" (click)="remove()">Delete</button>
+    <button class="share" (click)="share()">Share</button>
+  </div>
+</div>
