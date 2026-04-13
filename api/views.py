@@ -1,22 +1,23 @@
-from django.http import JsonResponse
-from .models import Product, Category
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
-def products_list(request):
-    products = list(Product.objects.values())
-    return JsonResponse(products, safe=False)
+from .models import Category, Product
+from .serializers import CategorySerializer, ProductSerializer
 
-def product_detail(request, id):
-    product = list(Product.objects.filter(id=id).values())
-    return JsonResponse(product, safe=False)
 
-def categories_list(request):
-    categories = list(Category.objects.values())
-    return JsonResponse(categories, safe=False)
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
-def category_detail(request, id):
-    category = list(Category.objects.filter(id=id).values())
-    return JsonResponse(category, safe=False)
+    @action(detail=True, methods=['get'])
+    def products(self, request, pk=None):
+        category = self.get_object()
+        products = Product.objects.filter(category=category)
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
 
-def products_by_category(request, id):
-    products = list(Product.objects.filter(category_id=id).values())
-    return JsonResponse(products, safe=False)
+
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
